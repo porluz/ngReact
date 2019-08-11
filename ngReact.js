@@ -25,8 +25,8 @@
   // get a react component from name (components can be an angular injectable e.g. value, factory or
   // available on window
   function getReactComponent( name, $injector ) {
-    // if name is a function assume it is component and return it
-    if (angular.isFunction(name)) {
+    // if name is a function or object, assume it is component and return it
+    if (angular.isFunction(name) || angular.isObject(name)) {
       return name;
     }
 
